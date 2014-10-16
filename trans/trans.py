@@ -15,7 +15,7 @@ class Phon:
     '''
 
     vowels = 'aeiou'
-    nasal_v = 'ãêîõû'
+    nasal_v = 'ãẽĩõũ'
     nasals = 'mn'
     consonants = 'bcdfghjklmnpqrstvxywz'
 
