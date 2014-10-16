@@ -26,10 +26,12 @@ class Phon:
 
     def read(self, source):
         '''
-        Arquivos de regras tem o formato:
+        Cada linha do arquivo de regras tem o formato:
         input   output  exceções
 
         exceções é uma lista de palavras separadas por vírgulas.
+
+        Linhas de comentário começam com '#'.
         '''
 
         rules = []
@@ -68,7 +70,6 @@ class Phon:
             
             if rule[0][i] == 'V':
                 l = []
-                #if rule[0] == 'VNC': import pdb; pdb.set_trace()
                 for cx in cxs:
                     for v in self.vowels + self.nasal_v:
                         cx[0][i] = v
