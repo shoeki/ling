@@ -50,4 +50,4 @@ if __name__ == '__main__':
     teste = ['casa', 'monstro', 'transporte', 'caixa', 'distração', 'recado',
             'oLos', 'felicidade', 'expresões regulares']
     for w in teste:
-        print('+'.join(s.syll(w)))
+        print('.'.join(s.syll(w)))
