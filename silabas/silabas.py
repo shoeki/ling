@@ -15,18 +15,13 @@ class Sigma:
             'LcvR', 'LvncRZ', 'LvcRZ', 'LvRZ']
     model = []
 
+
     def __init__(self):
 
         for m in self.moldes:
             regex = ''.join(map(lambda x: getattr(self, x), [x for x in m]))
             self.model.append(re.compile(regex))
 
-    
-    def sep(self, matchobj):
-        try:
-            return matchobj.group('sil').upper() + '.' + matchobj.group('resto')
-        except:
-            return matchobj.group('sil').upper() + '.'
     
     def syll(self, s):    
         subs = []
