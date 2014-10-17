@@ -48,6 +48,6 @@ class Sigma:
 if __name__ == '__main__':
     s = Sigma()
     teste = ['casa', 'monstro', 'transporte', 'caixa', 'distração', 'recado',
-            'oLos', 'felicidade', 'expresões regulares']
+            'oLos', 'felicidade', 'expresões']
     for w in teste:
         print('.'.join(s.syll(w)))
