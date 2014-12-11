@@ -4,7 +4,7 @@
 import sqlite3
 import json
 
-db = sqlite3.connect('corpus.db')
+db = sqlite3.connect('data/corpus.db')
 
 with db:
     cur = db.cursor()
