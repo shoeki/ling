@@ -9,6 +9,7 @@ import json
 import sqlite3
 
 db = sqlite3.connect('data/corpus.db')
+exceptions = 'exceptions.json'
 
 afixo = {
         'mento': 'mento$|mnto$|mentu$',
