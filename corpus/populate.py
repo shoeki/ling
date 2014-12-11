@@ -22,7 +22,7 @@ with open(args.data, 'r') as source:
 with open('subs.json', 'r') as lista_grafia:
     grafia_subs = json.load(lista_grafia)
 
-con = db.connect('corpus.db')
+con = db.connect('data/corpus.db')
 st = stemmer.RSLPStemmer()
 
 
