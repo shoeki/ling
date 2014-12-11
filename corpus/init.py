@@ -6,7 +6,7 @@
 
 import sqlite3 as db
 
-con = db.connect('corpus.db')
+con = db.connect('data/corpus.db')
 
 with con:
 
