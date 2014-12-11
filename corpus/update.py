@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+'''
+Busca todas as palavras do corpus e as compara com a lista de substituições.
+Caso haja alguma entrada nessa lista que não esteja corrigida no corpus,
+o script faz a correção necessária.
+'''
+
 import sqlite3
 import json
 
@@ -12,14 +18,16 @@ with db:
     with open('subs.json', 'r') as grafia:
         grafia_subs = json.load(grafia)
 
-    # atualizar grafia
-    words = cur.execute('SELECT stem FROM Token').fetchall()
+    words = cur.execute('SELECT palavra FROM Palavra').fetchall()
     words = map(lambda w: w[0], words)
     words = filter(lambda w: w in grafia_subs and grafia_subs[w], words)
     words = map(lambda w: (grafia_subs[w], w), words)
-    print words
+    
+    for w in words:
+        print w[1] + ' -> ' + w[0]
 
     if words:
-        cur.executemany('UPDATE Token SET stem = ? WHERE stem = ?', words)
-        cur.executemany('DELETE FROM Palavra WHERE palavra = ?',
-                map(lambda w: w[1], words))
+        cur.executemany('UPDATE Palavra SET palavra = ? WHERE palavra = ?',
+                        words)
+        cur.executemany('UPDATE Token SET stem = ? WHERE stem = ?',
+                        words)
