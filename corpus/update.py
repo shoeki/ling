@@ -27,7 +27,7 @@ with db:
         print w[1] + ' -> ' + w[0]
 
     if words:
-        cur.executemany('UPDATE Palavra SET palavra = ? WHERE palavra = ?',
-                        words)
+        cur.executemany('UPDATE OR IGNORE Palavra SET palavra = ?'
+                        'WHERE palavra = ?', words)
         cur.executemany('UPDATE Token SET stem = ? WHERE stem = ?',
                         words)
