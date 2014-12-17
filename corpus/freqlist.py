@@ -6,10 +6,14 @@ import argparse
 import tools
 import sqlite3 as db
 
-cmd = argparse.ArgumentParser(description='Gera listas de frequência')
-cmd.add_argument('corpus')
-cmd.add_argument('afixo')
-cmd.add_argument('output')
+cmd = argparse.ArgumentParser(description='Por exemplo: ./freqlist.py all'
+                                        ' mento out_mento.lst')
+cmd.add_argument('corpus', help='Nome do corpus dentro do banco de dados.'
+                                ' "all" seleciona todo o banco.')
+cmd.add_argument('afixo', help='Referência do afixo desejado, que precisa estar'
+                                ' definida em tools.py')
+cmd.add_argument('output', help='Arquivo de output que receberá a lista de'
+                                ' frequências.')
 args = cmd.parse_args()
 
 afixo = args.afixo
