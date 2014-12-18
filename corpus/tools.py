@@ -9,6 +9,8 @@ import json
 import sqlite3
 
 db = sqlite3.connect('data/corpus.db')
+db.text_factory = lambda x: x.decode('utf-8')   # compatibilidade com Python < 3
+
 exceptions = 'exceptions.json'
 
 afixo = {
@@ -39,13 +41,13 @@ def getContexts(query, n=20):
 
     with db:
         cur = db.cursor()
-        
         tokens = cur.execute('SELECT corpo FROM Texto WHERE textoid IN'
                              '(SELECT texto FROM Token WHERE token = ? LIMIT ?)',
                              (query, n)).fetchall()
     
     # fetchall() retorna uma lista de tuples. Precisamos transformá-la
     # em uma lista de strings.
+    
     return map(lambda t: t[0], tokens)
 
 #def countCorpus(nome):
