@@ -134,7 +134,8 @@ if __name__ == '__main__':
 
     try:
         with open(args[0], 'r') as words:
-            for line in words:
-                print('\t'.join(ph.run(line.split())))
+            with open(args[1], 'w') as output:
+                for line in words:
+                    output.write('\t'.join(ph.run(line.split())) + '\n')
     except FileNotFoundError:
         print('Indique o nome do arquivo')
