@@ -1,44 +1,58 @@
+#
+# Estas regras não garantem cobertura completa do português, o que não é uma
+# tarefa trivial. Por exemplo, elas não cobrem a escolha entre vogais
+# médias-altas ou médias-baixas em sílabas tônicas. Não houve esforço para
+# dar conta de casos como esse, porque nossos dados são de verbos no infinitivo
+# e de nomes formados pelos sufixos -ção e -mento, casos em que a sílaba tônica
+# é completamente previsível.
+# Resultados mais robustos para a língua toda podem ser obtidos depois de se
+# resolver o problema da acentuação, que é mais simples e simplifica grandemente
+# a tarefa de G2P.
+#
 aixa	aiSa
 axa	aSa
 lh	L
 lC	wC
 l$	w0
+#
+# introdução de [z]
 Vsl	Vzl
 VsV	VzV
+^exV	0ezV
+#
+# introdução de [s]
 ss	s
 sce	se
 sci	si
 sç	s
 ç	s
+xs	s
 ch	0S
 ci	si
 ce	se
+xce	se
+xci	si
+exV	eksV
 ca	ka
 co	ko
 cu	ku
 cC	kC
-xce	se
-xci	si
 gui	gi
 gue	ge
 que	ke
 qui	ki
 nh	ñ
-^exV	0ezV
 ^exs	0e0s
+ens	ẽs
 ixi	iSi
 Vx0V	VksV
 xs	ks
 exC	esC
 ^xV	0SV
-exV	eksV
 x	S
 rr	x
-xs	s
-ens	ẽs
-ns	nz
 VNC	Ṽ0C
 ão	ãw
 am$	ãw
 em$	ẽj
-h		''	
+h	''
