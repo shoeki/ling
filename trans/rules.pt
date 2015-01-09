@@ -9,6 +9,9 @@
 # resolver o problema da acentuação, que é mais simples e simplifica grandemente
 # a tarefa de G2P.
 #
+# french
+glamour	glamur
+#
 aixa	aiSa
 axa	aSa
 lh	L
@@ -37,6 +40,8 @@ ca	ka
 co	ko
 cu	ku
 cC	kC
+#g
+gi	Zi
 gui	gi
 gue	ge
 que	ke
@@ -55,4 +60,4 @@ VNC	Ṽ0C
 ão	ãw
 am$	ãw
 em$	ẽj
-h	''
+h	0
