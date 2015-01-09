@@ -17,7 +17,7 @@ class Phon:
     vowels = 'aeiou'
     nasal_v = 'ãẽĩõũ'
     nasals = 'mn'
-    consonants = 'bcdfghjklmnpqrstvxywz'
+    consonants = 'bcdfghjklmnpqrstvxywzZS'
 
     def __init__(self, rules='rules.pt'):
 
