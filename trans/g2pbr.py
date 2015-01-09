@@ -137,5 +137,5 @@ if __name__ == '__main__':
             with open(args[1], 'w') as output:
                 for line in words:
                     output.write('\t'.join(ph.run(line.split())) + '\n')
-    except FileNotFoundError:
-        print('Indique o nome do arquivo')
+    except IndexError:
+        print('Indique o arquivo de input e o arquivo de output')
