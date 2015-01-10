@@ -50,7 +50,7 @@ with con:
         # Prepare data
         if text['titulo']: tit = text['titulo'][0]
         # text should be stripped of excessive newline characters
-        corpo = re.sub('\n\n+', '\n', ''.join(text['corpo']))
+        corpo = re.sub('\n\s+', '\n', ''.join(text['corpo']))
         h = str(text['hash'])
 
         # Insert data in the appropriate fields
