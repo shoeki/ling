@@ -48,7 +48,10 @@ with con:
     for text in filter(lambda t: t['corpo'], data):
         
         # Prepare data
-        if text['titulo']: tit = text['titulo'][0]
+        if text['titulo']:
+            tit = text['titulo'][0]
+        else:
+            tit = ' '
         # text should be stripped of excessive newline characters
         corpo = re.sub('\n\s+', '\n', ''.join(text['corpo']))
         h = str(text['hash'])
@@ -60,7 +63,7 @@ with con:
             ''' Como o campo hash está marcado para ser único em init.py,
             caso se tente inserir um texto duplicado no banco de dados,
             uma exceção IntegrityError é imediatamente gerada. '''
-            pass
+            continue
 
         ### Tokenization and stemming ###
         pattern = r'\w+(-\w+)*'
