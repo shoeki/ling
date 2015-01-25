@@ -28,7 +28,7 @@ def getExceptions(aff):
     # carrega uma lista com as exceções do afixo estudado.
     try:
         with open(exceptions, 'r') as exs:
-            print json.load(exs, object_hook=lambda dic: dic[aff])
+            return json.load(exs, object_hook=lambda dic: dic[aff])
     except TypeError:
         return {}
 
