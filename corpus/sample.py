@@ -28,9 +28,9 @@ N = 0    # número de tokens com o afixo estudado.
 
 # Para cada afixo, também há palavras que apenas parecem instanciá-lo, pois
 # apresentam a mesma sequência fonológica desse afixo.
-exceptions = tools.getExceptions(args.afixo)
+exceptions = tools.getExceptions(args.afixo.decode('utf-8'))
 
-con = db.connect('corpus.db')
+con = db.connect('data/corpus.db')
 
 with con:
     # Este bloco de código constrói a curva de vocabulário, a partir do arqui-
