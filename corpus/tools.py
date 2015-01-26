@@ -19,7 +19,7 @@ afixo = {
         'ura': '(t|d)ura$'
     }
 
-def getExceptions(afixo):
+def getExceptions(aff):
     '''
     Dado um afixo, retorna a lista de exceções correspondente, carregada a
     partir de um arquivo JSON.
@@ -28,7 +28,7 @@ def getExceptions(afixo):
     # carrega uma lista com as exceções do afixo estudado.
     try:
         with open(exceptions, 'r') as exs:
-            return json.load(exs, object_hook=lambda dic: dic[afixo])
+            return json.load(exs, object_hook=lambda dic: dic[aff])
     except TypeError:
         return {}
 
